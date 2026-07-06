@@ -75,25 +75,6 @@
         .world-plane { position: absolute; z-index: 3; color: #FFDCB0; font-size: 11px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.6)); pointer-events: none; }
         .world-map--preloader .world-plane { font-size: 9px; }
 
-        /* Versão de fundo: o mesmo mapa/animação ocupando a página inteira, atrás do conteúdo */
-        .bg-world-map-fixed {
-            position: fixed; inset: 0; z-index: -1; overflow: hidden;
-            display: flex; align-items: center; justify-content: center; pointer-events: none;
-        }
-        .bg-world-map-fixed .world-map {
-            width: 100vw; max-width: none; border: none; border-radius: 0; background: transparent;
-        }
-        .bg-world-map-fixed .world-map img { opacity: 0.3; }
-        .bg-world-map-fixed .world-pin-label { font-size: 10px; }
-        .bg-world-map-caption {
-            position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%);
-            z-index: 1; pointer-events: none; white-space: nowrap;
-            font-size: 9px; text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600;
-            color: rgba(255, 248, 240, 0.4); background: rgba(26, 15, 10, 0.55);
-            padding: 5px 12px; border-radius: 999px; backdrop-filter: blur(6px);
-            border: 1px solid rgba(255, 122, 26, 0.15);
-        }
-
         /* --- FUNDO PRINCIPAL --- */
         .main-bg { position: fixed; inset: 0; background: linear-gradient(135deg, #1A0F0A 0%, #241611 40%, #7A2E0A 100%); z-index: -2; }
         .bg-grid { position: fixed; inset: 0; background-image: radial-gradient(circle at center, rgba(255,122,26,0.04) 1px, transparent 1px); background-size: 40px 40px; z-index: -1; opacity: 0.5; }
@@ -232,19 +213,6 @@
 
     <div class="main-bg"></div>
     <div class="bg-grid"></div>
-
-    <!-- ANIMAÇÃO DE VIAGEM NO FUNDO DA PÁGINA: mapa múndi, Brasil -> destino do momento -->
-    <div class="bg-world-map-fixed">
-        <div class="relative world-map" data-world-map data-lift="16">
-            <img src="assets/world-map.svg" alt="Mapa múndi" aria-hidden="true">
-            <svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" data-route-svg></svg>
-            <div class="world-pin" data-pin="origin"><span class="world-pin-dot"></span><span class="world-pin-label">Brasil</span></div>
-            <div class="world-pin" data-pin="dest"><span class="world-pin-dot world-pin-dot--dest"></span><span class="world-pin-label world-pin-label--dest" data-dest-label>Itália</span></div>
-            <i class="fa-solid fa-plane world-plane" data-plane></i>
-        </div>
-    </div>
-    <p class="bg-world-map-caption">Embarque no Brasil · Destino: <span data-dest-caption>Itália</span></p>
-
     <div class="bg-sun-glow"></div>
     <div id="particles-container"></div>
 
@@ -275,7 +243,21 @@
                     Transformamos destinos em experiências inesquecíveis.
                 </h2>
 
-                <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto mt-2">
+                <!-- ANIMAÇÃO DE VIAGEM: mapa múndi, Brasil -> destino do momento -->
+                <div class="max-w-md mx-auto mb-8">
+                    <div class="relative world-map" data-world-map data-lift="16">
+                        <img src="assets/world-map.svg" alt="Mapa múndi" aria-hidden="true" style="opacity:0.9;">
+                        <svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" data-route-svg></svg>
+                        <div class="world-pin" data-pin="origin"><span class="world-pin-dot"></span><span class="world-pin-label">Brasil</span></div>
+                        <div class="world-pin" data-pin="dest"><span class="world-pin-dot world-pin-dot--dest"></span><span class="world-pin-label world-pin-label--dest" data-dest-label>Itália</span></div>
+                        <i class="fa-solid fa-plane world-plane" data-plane></i>
+                    </div>
+                    <p class="text-center text-[9px] uppercase tracking-widest text-ice/40 font-semibold mt-2">
+                        Embarque no <span class="text-sunset-light">Brasil</span> · Destino: <span class="text-sunset-light" data-dest-caption>Itália</span>
+                    </p>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
                     <a href="https://api.whatsapp.com/send/?phone=553185992357&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-premium flex-1 flex items-center justify-center gap-2 px-5 py-3">
                         <i class="fa-brands fa-whatsapp text-xl text-white"></i>
                         <span class="font-bold text-sm text-white">Falar no WhatsApp</span>
