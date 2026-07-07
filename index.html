@@ -112,12 +112,12 @@
             background: linear-gradient(135deg, #25D366, #128C7E); color: white;
             border: 1px solid rgba(255,255,255,0.2); border-radius: 14px;
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25), inset 0 2px 5px rgba(255,255,255,0.3);
-            animation: glowPulseWhats 2.8s ease-in-out infinite; position: relative; overflow: hidden; z-index: 1;
+            animation: glowSoftWhats 4.5s ease-in-out infinite; position: relative; overflow: hidden; z-index: 1;
         }
         .btn-whatsapp-premium:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(37, 211, 102, 0.45); animation: none; }
-        @keyframes glowPulseWhats {
-            0%, 100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25); }
-            50% { box-shadow: 0 6px 32px rgba(37, 211, 102, 0.55); }
+        @keyframes glowSoftWhats {
+            0%, 100% { box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25), inset 0 2px 5px rgba(255,255,255,0.3); }
+            50% { box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35), inset 0 2px 5px rgba(255,255,255,0.3); }
         }
 
         /* --- CARROSSÉIS (destinos / depoimentos) --- */
@@ -161,7 +161,7 @@
         .step-line { position: absolute; top: 28px; left: 16%; right: 16%; height: 0; border-top: 2px dashed rgba(255,122,26,0.3); z-index: 0; }
 
         /* --- COTAÇÃO: select e autocomplete de destino --- */
-        #quote-quartos option { background-color: #241611; color: #FFF8F0; }
+        #quote-pessoas option { background-color: #241611; color: #FFF8F0; }
         .quote-suggestions {
             position: absolute; left: 0; right: 0; top: calc(100% + 4px); z-index: 20;
             background: #241611; border: 1px solid rgba(255,122,26,0.25); border-radius: 0.6rem;
@@ -216,11 +216,6 @@
 
             <!-- HERO -->
             <section class="pt-10 sm:pt-14 pb-6 text-center reveal active">
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-sunset/25 bg-sunset/10 mb-6">
-                    <i class="fa-solid fa-tag text-[10px] text-sunset"></i>
-                    <span class="text-[10px] uppercase tracking-widest text-sunset-light font-semibold">Até 40% OFF em passagens selecionadas</span>
-                </div>
-
                 <div class="relative w-20 h-20 mx-auto mb-4">
                     <div class="absolute inset-0 bg-sunset rounded-full blur opacity-25 animate-pulse"></div>
                     <img src="img/logo teto.png" alt="Kidestino" class="relative w-full h-full rounded-full object-cover border border-sunset/40 shadow-xl">
@@ -238,7 +233,7 @@
                 <div class="mb-8">
                     <div class="flex items-center gap-3 mb-6">
                         <div class="h-[1px] flex-1 bg-gradient-to-r from-transparent to-sunset/30"></div>
-                        <h3 class="font-brand text-sunset-light text-sm tracking-widest uppercase">Destinos em Destaque</h3>
+                        <h3 class="font-brand text-sunset-light text-sm tracking-widest uppercase">Selecione seu Destino</h3>
                         <div class="h-[1px] flex-1 bg-gradient-to-l from-transparent to-sunset/30"></div>
                     </div>
 
@@ -576,13 +571,13 @@
                             <input type="date" id="quote-data-volta" class="w-full bg-white/5 border border-white/10 focus:border-sunset/50 rounded-lg px-3 py-2.5 text-sm text-ice outline-none transition-colors [color-scheme:dark]">
                         </div>
                         <div class="sm:col-span-2">
-                            <label for="quote-quartos" class="block text-[10px] uppercase tracking-widest text-ice/50 font-semibold mb-1">Quartos</label>
-                            <select id="quote-quartos" class="w-full bg-white/5 border border-white/10 focus:border-sunset/50 rounded-lg px-3 py-2.5 text-sm text-ice outline-none transition-colors">
-                                <option value="1">1 quarto</option>
-                                <option value="2">2 quartos</option>
-                                <option value="3">3 quartos</option>
-                                <option value="4">4 quartos</option>
-                                <option value="5+">5 ou mais quartos</option>
+                            <label for="quote-pessoas" class="block text-[10px] uppercase tracking-widest text-ice/50 font-semibold mb-1">Pessoas</label>
+                            <select id="quote-pessoas" class="w-full bg-white/5 border border-white/10 focus:border-sunset/50 rounded-lg px-3 py-2.5 text-sm text-ice outline-none transition-colors">
+                                <option value="1">1 pessoa</option>
+                                <option value="2">2 pessoas</option>
+                                <option value="3">3 pessoas</option>
+                                <option value="4">4 pessoas</option>
+                                <option value="5+">5 ou mais pessoas</option>
                             </select>
                         </div>
                         <div class="sm:col-span-2">
@@ -601,7 +596,7 @@
                 <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
                     <a href="https://api.whatsapp.com/send/?phone=5531985992357&amp;text=Ol%C3%A1!%20Gostaria%20de%20conhecer%20os%20pacotes%20de%20viagens%20da%20Kidestino.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-premium flex-1 flex items-center justify-center gap-2 px-5 py-3">
                         <i class="fa-brands fa-whatsapp text-xl text-white"></i>
-                        <span class="font-bold text-sm text-white">Pacotes de Viagens</span>
+                        <span class="font-bold text-sm text-white">Pacotes de viagens</span>
                     </a>
                     <a id="save-contact-btn" href="#" class="premium-link-card flex-1 flex items-center justify-center gap-2 px-5 py-3">
                         <i class="fa-solid fa-address-book text-sunset"></i>
@@ -624,7 +619,7 @@
                             <i class="fa-brands fa-instagram text-sm transition-transform"></i>
                         </div>
                         <div class="ml-3 flex-1 text-left">
-                            <h4 class="font-semibold text-ice text-sm group-hover:text-sunset-light transition-colors">Seguir no Instagram</h4>
+                            <h4 class="font-semibold text-ice text-sm group-hover:text-sunset-light transition-colors">Siga no Instagram</h4>
                         </div>
                         <i class="fa-solid fa-chevron-right text-ice/40 text-xs mr-1"></i>
                     </a>
@@ -634,7 +629,7 @@
                             <i class="fa-solid fa-location-dot text-sm transition-transform"></i>
                         </div>
                         <div class="ml-3 flex-1 text-left">
-                            <h4 class="font-semibold text-ice text-sm group-hover:text-sunset-light transition-colors">Localização</h4>
+                            <h4 class="font-semibold text-ice text-sm group-hover:text-sunset-light transition-colors">Localização da Agência</h4>
                         </div>
                         <i class="fa-solid fa-chevron-right text-ice/40 text-xs mr-1"></i>
                     </a>
@@ -644,7 +639,7 @@
                             <i class="fa-brands fa-google text-sm transition-transform"></i>
                         </div>
                         <div class="ml-3 flex-1 text-left">
-                            <h4 class="font-semibold text-ice text-sm group-hover:text-sunset-light transition-colors">Avalie no Google</h4>
+                            <h4 class="font-semibold text-ice text-sm group-hover:text-sunset-light transition-colors">Avalie a Kidestino</h4>
                         </div>
                         <i class="fa-solid fa-chevron-right text-ice/40 text-xs mr-1"></i>
                     </a>
@@ -658,6 +653,22 @@
                         </div>
                         <i class="fa-solid fa-chevron-right text-ice/40 text-xs mr-1"></i>
                     </a>
+                </div>
+            </section>
+
+            <!-- ANIMAÇÃO DE VIAGEM: mapa múndi, Brasil -> destino do momento -->
+            <section class="py-4 reveal">
+                <div class="max-w-md mx-auto">
+                    <div class="relative world-map" data-world-map data-lift="16">
+                        <img src="assets/world-map.svg" alt="Mapa múndi" aria-hidden="true" style="opacity:0.9;">
+                        <svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" data-route-svg></svg>
+                        <div class="world-pin" data-pin="origin"><span class="world-pin-dot"></span><span class="world-pin-label">Brasil</span></div>
+                        <div class="world-pin" data-pin="dest"><span class="world-pin-dot world-pin-dot--dest"></span><span class="world-pin-label world-pin-label--dest" data-dest-label>Itália</span></div>
+                        <i class="fa-solid fa-plane world-plane" data-plane></i>
+                    </div>
+                    <p class="text-center text-[9px] uppercase tracking-widest text-ice/40 font-semibold mt-2">
+                        Embarque no <span class="text-sunset-light">Brasil</span> · Destino: <span class="text-sunset-light" data-dest-caption>Itália</span>
+                    </p>
                 </div>
             </section>
 
@@ -695,22 +706,6 @@
                         <h4 class="font-semibold text-ice text-sm mb-1">3. Você só precisa embarcar</h4>
                         <p class="text-[11px] text-ice/50 max-w-[220px] mx-auto leading-relaxed">Cuidamos de tudo, do primeiro passo ao último pôr do sol da sua viagem.</p>
                     </div>
-                </div>
-            </section>
-
-            <!-- ANIMAÇÃO DE VIAGEM: mapa múndi, Brasil -> destino do momento -->
-            <section class="py-4 reveal">
-                <div class="max-w-md mx-auto">
-                    <div class="relative world-map" data-world-map data-lift="16">
-                        <img src="assets/world-map.svg" alt="Mapa múndi" aria-hidden="true" style="opacity:0.9;">
-                        <svg viewBox="0 0 200 100" preserveAspectRatio="none" aria-hidden="true" data-route-svg></svg>
-                        <div class="world-pin" data-pin="origin"><span class="world-pin-dot"></span><span class="world-pin-label">Brasil</span></div>
-                        <div class="world-pin" data-pin="dest"><span class="world-pin-dot world-pin-dot--dest"></span><span class="world-pin-label world-pin-label--dest" data-dest-label>Itália</span></div>
-                        <i class="fa-solid fa-plane world-plane" data-plane></i>
-                    </div>
-                    <p class="text-center text-[9px] uppercase tracking-widest text-ice/40 font-semibold mt-2">
-                        Embarque no <span class="text-sunset-light">Brasil</span> · Destino: <span class="text-sunset-light" data-dest-caption>Itália</span>
-                    </p>
                 </div>
             </section>
 
@@ -941,21 +936,7 @@
 
             <!-- FOOTER -->
             <footer class="text-center pt-8 pb-4 border-t border-white/10 reveal">
-                <img src="img/logo teto.png" alt="Kidestino" class="w-10 h-10 mx-auto rounded-full object-cover border border-sunset/50 opacity-50 mb-3">
-
-                <p class="text-sm text-sunset-light font-brand italic mb-4 drop-shadow-sm">
-                    Kidestino — transformamos destinos em experiências inesquecíveis.
-                </p>
-                <div class="flex flex-wrap justify-center gap-x-3 gap-y-2 text-[9px] uppercase tracking-widest text-ice/40 font-semibold">
-                    <span>Atendimento Personalizado</span>
-                    <span class="text-sunset/50">•</span>
-                    <span>Pacotes de Viagens</span>
-                    <span class="text-sunset/50">•</span>
-                    <span>Depoimentos</span>
-                    <span class="text-sunset/50">•</span>
-                    <span>Destinos Incríveis</span>
-                </div>
-                <p class="mt-5 text-[9px] uppercase tracking-widest text-ice/30 font-semibold">
+                <p class="text-[9px] uppercase tracking-widest text-ice/30 font-semibold">
                     © 2026 Kidestino — Todos os direitos reservados.
                 </p>
             </footer>
@@ -1157,6 +1138,15 @@
                 saveContactBtn.setAttribute('download', 'Kidestino.vcf');
             }
 
+            // Datas: abre o seletor de calendário ao clicar em qualquer parte do campo
+            document.querySelectorAll('input[type="date"]').forEach((dateInput) => {
+                dateInput.addEventListener('click', () => {
+                    if (typeof dateInput.showPicker === 'function') {
+                        try { dateInput.showPicker(); } catch (e) {}
+                    }
+                });
+            });
+
             // Cotação rápida: monta a mensagem e abre o WhatsApp
             const quoteSubmit = document.getElementById('quote-submit');
             if (quoteSubmit) {
@@ -1165,7 +1155,7 @@
                     const destino = document.getElementById('quote-destino').value.trim();
                     const dataIdaInput = document.getElementById('quote-data-ida').value;
                     const dataVoltaInput = document.getElementById('quote-data-volta').value;
-                    const quartos = document.getElementById('quote-quartos').value;
+                    const pessoas = document.getElementById('quote-pessoas').value;
 
                     function formatarData(valor) {
                         if (!valor) return '';
@@ -1181,7 +1171,7 @@
                     if (destino) msg += '\nDestino: ' + destino;
                     if (dataIdaFormatada) msg += '\nData de ida: ' + dataIdaFormatada;
                     if (dataVoltaFormatada) msg += '\nData de chegada: ' + dataVoltaFormatada;
-                    if (quartos) msg += '\nQuartos: ' + quartos;
+                    if (pessoas) msg += '\nPessoas: ' + pessoas;
 
                     const url = 'https://api.whatsapp.com/send/?phone=5531985992357&text=' + encodeURIComponent(msg) + '&type=phone_number&app_absent=0';
                     window.open(url, '_blank', 'noopener,noreferrer');
