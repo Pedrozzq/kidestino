@@ -22,7 +22,7 @@
                         ice: '#FFF8F0'
                     },
                     fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
+                        sans: ['Montserrat', 'sans-serif'],1
                         serif: ['Cinzel', 'serif'],
                         brand: ['Poppins', 'sans-serif'],
                     }
@@ -61,7 +61,7 @@
         /* --- ANIMAÇÃO DE VIAGEM: mapa múndi com rota Brasil -> destino do momento --- */
         .world-map { position: relative; width: 100%; aspect-ratio: 1.971; border-radius: 0.8rem; overflow: hidden; border: 1px solid rgba(255,122,26,0.15); background: rgba(26,15,10,0.4); }
         .world-map--preloader { width: 200px; max-width: 62vw; border-radius: 0.6rem; }
-        .world-map img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; }
+        .world-map img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; padding: 6%; }
         .world-map svg { position: absolute; inset: 0; width: 100%; height: 100%; }
         .world-route-line { animation: dashFlow 1.1s linear infinite; }
         @keyframes dashFlow { to { stroke-dashoffset: -14; } }
@@ -205,7 +205,6 @@
         </div>
 
         <div id="preloader-brand" class="relative flex flex-col items-center opacity-0 scale-90 transition-all duration-700">
-            <img src="img/logo teto.png" alt="Kidestino" class="w-12 h-12 rounded-full object-cover border border-sunset/40 shadow-lg mb-3">
             <h1 class="font-brand font-extrabold text-lg tracking-[0.15em] text-sunset-light uppercase drop-shadow-md">Kidestino</h1>
             <p class="text-[9px] text-white/40 tracking-[0.2em] mt-2 font-light">DESTINOS INESQUECÍVEIS</p>
         </div>
@@ -228,10 +227,10 @@
 
                 <div class="relative w-20 h-20 mx-auto mb-4">
                     <div class="absolute inset-0 bg-sunset rounded-full blur opacity-25 animate-pulse"></div>
-                    <img src="img/logo teto.png" alt="Kidestino" class="relative w-full h-full rounded-full object-cover border border-sunset/40 shadow-xl">
+                    <div class="relative w-full h-full rounded-full border border-sunset/40 shadow-xl bg-coal-800 flex items-center justify-center">
+                        <span class="font-brand font-black text-2xl text-gradient-sunset">K</span>
+                    </div>
                 </div>
-
-                <h1 class="font-brand font-black text-3xl sm:text-5xl uppercase tracking-wide text-gradient-sunset mb-3 drop-shadow-lg">Kidestino</h1>
 
                 <div id="open-status" class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 mb-1">
                     <span id="open-status-dot" class="w-2 h-2 rounded-full bg-ice/30"></span>
@@ -239,6 +238,7 @@
                 </div>
                 <p class="text-[9px] text-ice/30 tracking-wide mb-5">Seg a Sex, 09h às 17h · Sáb e Dom fechado</p>
 
+                <h1 class="font-brand font-black text-3xl sm:text-5xl uppercase tracking-wide text-gradient-sunset mb-3 drop-shadow-lg">Kidestino</h1>
                 <h2 class="text-sm sm:text-lg text-ice/90 font-medium mb-8 max-w-xl mx-auto leading-relaxed">
                     Transformamos destinos em experiências inesquecíveis.
                 </h2>
@@ -253,12 +253,12 @@
                         <i class="fa-solid fa-plane world-plane" data-plane></i>
                     </div>
                     <p class="text-center text-[9px] uppercase tracking-widest text-ice/40 font-semibold mt-2">
-                        Embarque no <span class="text-sunset-light">Brasil</span> · Destino: <span class="text-sunset-light" data-dest-caption>Itália</span>
+                        Embarque no <span class="text-sunset-light">Brasil</span> · Destino desta hora: <span class="text-sunset-light" data-dest-caption>Itália</span>
                     </p>
                 </div>
 
                 <div class="flex flex-col sm:flex-row gap-3 justify-center max-w-md mx-auto">
-                    <a href="https://api.whatsapp.com/send/?phone=553185992357&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-premium flex-1 flex items-center justify-center gap-2 px-5 py-3">
+                    <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-premium flex-1 flex items-center justify-center gap-2 px-5 py-3">
                         <i class="fa-brands fa-whatsapp text-xl text-white"></i>
                         <span class="font-bold text-sm text-white">Falar no WhatsApp</span>
                     </a>
@@ -278,28 +278,17 @@
                 </div>
 
                 <div class="flex flex-col gap-3 max-w-md mx-auto">
-                    <a href="#destinos" class="flex items-center p-3 w-full reveal group rounded-[14px] border border-white/10 shadow-[0_6px_20px_rgba(255,122,26,0.35)]" style="background: linear-gradient(135deg, #FF7A1A, #C2410C); transition-delay: 60ms;">
-                        <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center shrink-0 border border-white/30 backdrop-blur-sm">
-                            <i class="fa-solid fa-suitcase-rolling text-lg text-coal-900"></i>
-                        </div>
-                        <div class="ml-3 flex-1 text-left">
-                            <h4 class="font-bold text-sm text-coal-900">Pacotes de Viagens</h4>
-                            <p class="text-[10px] text-coal-900/70">Destaque: as melhores condições estão aqui</p>
-                        </div>
-                        <i class="fa-solid fa-chevron-right text-coal-900/70 text-xs mr-1"></i>
-                    </a>
-
-                    <a href="https://api.whatsapp.com/send/?phone=553185992357&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-premium flex items-center p-3 w-full reveal" style="transition-delay: 100ms;">
+                    <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-premium flex items-center p-3 w-full reveal" style="transition-delay: 60ms;">
                         <div class="w-9 h-9 bg-white/20 rounded-full flex items-center justify-center shrink-0 border border-white/30 backdrop-blur-sm">
                             <i class="fa-brands fa-whatsapp text-lg text-white"></i>
                         </div>
                         <div class="ml-3 flex-1 text-left">
-                            <h4 class="font-bold text-sm text-white">Dúvidas? Entre em contato agora.</h4>
+                            <h4 class="font-bold text-sm text-white">Falar no WhatsApp</h4>
                         </div>
                         <i class="fa-solid fa-chevron-right text-white/70 text-xs mr-1"></i>
                     </a>
 
-                    <a href="https://www.google.com/search?sca_esv=e9aed62c048a52f2&rlz=1C1BNSD_pt-PTBR1081BR1081&sxsrf=APpeQntHzbLyOVB_zyRJ3SZF1u10ELjSeA:1783372293106&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_wFkamnkcwd9tRDt5lz4PGafE9XqLr4WS1ABUJlgvXKmad4q8ujqggeLsglJ6cFn8yJaFUKfO8iVXyoNfNi2bM16zmGA&q=KIDESTINO+Coment%C3%A1rios&sa=X&ved=2ahUKEwj1_qDA-76VAxWzNTUKHWD2PDYQ0bkNegQIMhAH&biw=2560&bih=919&dpr=1#lrd=0xa40b82ba0b036b:0xdcc2dbd7d399464,3,,,," target="_blank" rel="noopener noreferrer" class="premium-link-card flex items-center p-3 w-full reveal group" style="transition-delay: 140ms;">
+                    <a href="https://www.google.com/search?sca_esv=e9aed62c048a52f2&rlz=1C1BNSD_pt-PTBR1081BR1081&sxsrf=APpeQntHzbLyOVB_zyRJ3SZF1u10ELjSeA:1783372293106&si=APenkKm7iecQ4G6P-TsbSMFKIQtv3EFIqRAFw-i8uEbk55Z-_wFkamnkcwd9tRDt5lz4PGafE9XqLr4WS1ABUJlgvXKmad4q8ujqggeLsglJ6cFn8yJaFUKfO8iVXyoNfNi2bM16zmGA&q=KIDESTINO+Coment%C3%A1rios&sa=X&ved=2ahUKEwj1_qDA-76VAxWzNTUKHWD2PDYQ0bkNegQIMhAH&biw=2560&bih=919&dpr=1#lrd=0xa40b82ba0b036b:0xdcc2dbd7d399464,3,,,," target="_blank" rel="noopener noreferrer" class="premium-link-card flex items-center p-3 w-full reveal group" style="transition-delay: 100ms;">
                         <div class="icon-box w-9 h-9 rounded-full flex items-center justify-center shrink-0 text-sunset">
                             <i class="fa-brands fa-google text-sm transition-transform"></i>
                         </div>
@@ -309,7 +298,17 @@
                         <i class="fa-solid fa-chevron-right text-ice/40 text-xs mr-1"></i>
                     </a>
 
-                    <a href="https://www.google.com/maps/dir/https:%2F%2Fwww.google.com%2Fmaps%2Fdir%2F%2FKIDESTINO,%2BR.%2BClodomiro%2Bde%2BOliveira,%2B64%2B-%2BPILAR,%2BOuro%2BPreto%2B-%2BMG,%2B35402-021%2F@-20.3914238,-43.5126098,15z%2Fdata%3D!3m1!4b1!4m8!4m7!1m0!1m5!1m1!1s0xa40b82ba0b036b:0xdcc2dbd7d399464!2m2!1d-43.5083448!2d-20.3869953%3Fentry%3Dttu%26g_ep%3DEgoyMDI2MDYyOS4wIKXMDSoASAFQAw%253D%253D/KIDESTINO,+R.+Clodomiro+de+Oliveira,+64+-+PILAR,+Ouro+Preto+-+MG,+35402-021/@-20.3914238,-43.5126098,15z/data=!4m8!4m7!1m0!1m5!1m1!1s0xa40b82ba0b036b:0xdcc2dbd7d399464!2m2!1d-43.5083448!2d-20.3869953?entry=ttu&amp;g_ep=EgoyMDI2MDYyOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="premium-link-card flex items-center p-3 w-full reveal group" style="transition-delay: 180ms;">
+                    <a href="#destinos" class="premium-link-card flex items-center p-3 w-full reveal group" style="transition-delay: 140ms;">
+                        <div class="icon-box w-9 h-9 rounded-full flex items-center justify-center shrink-0 text-sunset">
+                            <i class="fa-solid fa-suitcase-rolling text-sm transition-transform"></i>
+                        </div>
+                        <div class="ml-3 flex-1 text-left">
+                            <h4 class="font-semibold text-ice text-sm group-hover:text-sunset-light transition-colors">Pacotes de Viagens</h4>
+                        </div>
+                        <i class="fa-solid fa-chevron-right text-ice/40 text-xs mr-1"></i>
+                    </a>
+
+                    <a href="#" target="_blank" class="premium-link-card flex items-center p-3 w-full reveal group" style="transition-delay: 180ms;">
                         <div class="icon-box w-9 h-9 rounded-full flex items-center justify-center shrink-0 text-sunset">
                             <i class="fa-solid fa-location-dot text-sm transition-transform"></i>
                         </div>
@@ -435,10 +434,10 @@
 
                     <div id="destination-scroll" class="h-scroll flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scroll-smooth px-1">
                         <div class="dest-card snap-center shrink-0">
-                            <img src="https://images.unsplash.com/photo-1516306580123-e6e52b1b7b5f?auto=format&fit=crop&w=400&q=80" alt="Rio de Janeiro" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80" alt="Paris" loading="lazy">
                             <div class="dest-content">
-                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Rio de Janeiro</h4>
-                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Cristo Redentor</p>
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Paris</h4>
+                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Roteiro Europeu</p>
                             </div>
                         </div>
                         <div class="dest-card snap-center shrink-0">
@@ -449,31 +448,10 @@
                             </div>
                         </div>
                         <div class="dest-card snap-center shrink-0">
-                            <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?auto=format&fit=crop&w=400&q=80" alt="Buenos Aires" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80" alt="Dubai" loading="lazy">
                             <div class="dest-content">
-                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Buenos Aires</h4>
-                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Charme Portenho</p>
-                            </div>
-                        </div>
-                        <div class="dest-card snap-center shrink-0">
-                            <img src="https://images.unsplash.com/photo-1666977461267-c0e924696510?auto=format&fit=crop&w=400&q=80" alt="Cartagena" loading="lazy">
-                            <div class="dest-content">
-                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Cartagena</h4>
-                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Cidade Colorida</p>
-                            </div>
-                        </div>
-                        <div class="dest-card snap-center shrink-0">
-                            <img src="https://images.unsplash.com/photo-1574333360968-50e1fc6035b8?auto=format&fit=crop&w=400&q=80" alt="Machu Picchu" loading="lazy">
-                            <div class="dest-content">
-                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Machu Picchu</h4>
-                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Maravilha Inca</p>
-                            </div>
-                        </div>
-                        <div class="dest-card snap-center shrink-0">
-                            <img src="https://images.unsplash.com/photo-1689850543263-01a52ccc6943?auto=format&fit=crop&w=400&q=80" alt="Santiago" loading="lazy">
-                            <div class="dest-content">
-                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Santiago</h4>
-                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Aos Pés dos Andes</p>
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Dubai</h4>
+                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Luxo e Inovação</p>
                             </div>
                         </div>
                         <div class="dest-card snap-center shrink-0">
@@ -484,10 +462,17 @@
                             </div>
                         </div>
                         <div class="dest-card snap-center shrink-0">
-                            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=400&q=80" alt="Paris" loading="lazy">
+                            <img src="https://images.unsplash.com/photo-1597466599360-3b9775841aec?auto=format&fit=crop&w=400&q=80" alt="Orlando" loading="lazy">
                             <div class="dest-content">
-                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Paris</h4>
-                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Roteiro Europeu</p>
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Orlando</h4>
+                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Viagem em Família</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1599640842225-85d111c60e6b?auto=format&fit=crop&w=400&q=80" alt="Cruzeiros" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Cruzeiros</h4>
+                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Experiência em Alto-mar</p>
                             </div>
                         </div>
                         <div class="dest-card snap-center shrink-0">
@@ -512,10 +497,24 @@
                             </div>
                         </div>
                         <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=400&q=80" alt="Tóquio" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Tóquio</h4>
+                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Cultura e Tecnologia</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
                             <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=400&q=80" alt="Santorini" loading="lazy">
                             <div class="dest-content">
                                 <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Santorini</h4>
                                 <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Pôr do Sol Grego</p>
+                            </div>
+                        </div>
+                        <div class="dest-card snap-center shrink-0">
+                            <img src="https://images.unsplash.com/photo-1589909202802-8f4aadce1849?auto=format&fit=crop&w=400&q=80" alt="Buenos Aires" loading="lazy">
+                            <div class="dest-content">
+                                <h4 class="font-brand font-bold text-white text-base drop-shadow-md">Buenos Aires</h4>
+                                <p class="text-[9px] text-sunset-light uppercase tracking-wider font-semibold">Charme Portenho</p>
                             </div>
                         </div>
                     </div>
@@ -633,7 +632,7 @@
                         Seu próximo destino pode virar uma experiência inesquecível hoje.
                     </h3>
 
-                    <a href="https://api.whatsapp.com/send/?phone=553185992357&amp;text&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener noreferrer"
+                    <a href="https://wa.me/SEUNUMEROAQUI" target="_blank" rel="noopener noreferrer"
                        class="btn-whatsapp-premium relative inline-flex items-center justify-center gap-2 px-6 py-3 w-full sm:w-auto mx-auto mb-6">
                         <i class="fa-brands fa-whatsapp text-xl text-white"></i>
                         <span class="font-bold text-sm text-white">Falar com um especialista</span>
@@ -655,8 +654,9 @@
 
             <!-- FOOTER -->
             <footer class="text-center pt-8 pb-4 border-t border-white/10 reveal">
-                <img src="img/logo teto.png" alt="Kidestino" class="w-10 h-10 mx-auto rounded-full object-cover border border-sunset/50 opacity-50 mb-3">
-
+                <div class="w-10 h-10 mx-auto rounded-full border border-sunset/50 opacity-50 mb-3 bg-coal-800 flex items-center justify-center">
+                    <span class="font-brand font-black text-sm text-sunset-light">K</span>
+                </div>
                 <p class="text-sm text-sunset-light font-brand italic mb-4 drop-shadow-sm">
                     Kidestino — transformamos destinos em experiências inesquecíveis.
                 </p>
@@ -696,8 +696,8 @@
                     text.className = 'text-[10px] uppercase tracking-widest font-semibold text-green-400';
                     text.textContent = 'Aberto agora';
                 } else {
-                    dot.className = 'w-2 h-2 rounded-full bg-red-500';
-                    text.className = 'text-[10px] uppercase tracking-widest font-semibold text-red-500';
+                    dot.className = 'w-2 h-2 rounded-full bg-sunset/60';
+                    text.className = 'text-[10px] uppercase tracking-widest font-semibold text-ice/50';
                     text.textContent = 'Fechado no momento';
                 }
             }
@@ -708,20 +708,12 @@
             const BRAZIL = { lat: -15.8, lon: -47.9 };
             const COUNTRIES = [
                 { name: 'Itália', lat: 41.9, lon: 12.5 },
-                { name: 'Chile', lat: -33.45, lon: -70.65 },
                 { name: 'França', lat: 48.85, lon: 2.35 },
                 { name: 'Estados Unidos', lat: 28.54, lon: -81.38 },
                 { name: 'México', lat: 21.16, lon: -86.85 },
                 { name: 'Grécia', lat: 36.39, lon: 25.46 },
                 { name: 'Japão', lat: 35.68, lon: 139.69 },
-                { name: 'Maldivas', lat: 4.17, lon: 73.51 },
-                { name: 'Emirados Árabes Unidos', lat: 25.2, lon: 55.27 },
-                { name: 'Argentina', lat: -34.6, lon: -58.38 },
-                { name: 'Portugal', lat: 38.72, lon: -9.14 },
-                { name: 'Reino Unido', lat: 51.51, lon: -0.13 },
-                { name: 'Austrália', lat: -33.87, lon: 151.21 },
-                { name: 'Tailândia', lat: 13.76, lon: 100.5 },
-                { name: 'Egito', lat: 30.04, lon: 31.24 }
+                { name: 'Maldivas', lat: 4.17, lon: 73.51 }
             ];
             let destIndex = 0;
             function nextDestination() {
@@ -730,16 +722,8 @@
                 return dest;
             }
 
-            // Limites reais do conteúdo do mapa dentro do viewBox (o retângulo "ocean"
-            // tem margem interna e não ocupa 0-100% do viewBox, por isso o cálculo
-            // simples de lat/lon desalinhava os pinos perto das bordas)
-            const MAP_BOUNDS = { minX: -32.58, maxX: 2728.46, minY: 61.99, maxY: 1457.56, viewBoxW: 2752.766, viewBoxH: 1537.631 };
             function toXY(lat, lon) {
-                const fracLon = (lon + 180) / 360;
-                const fracLat = (90 - lat) / 180;
-                const rawX = MAP_BOUNDS.minX + fracLon * (MAP_BOUNDS.maxX - MAP_BOUNDS.minX);
-                const rawY = MAP_BOUNDS.minY + fracLat * (MAP_BOUNDS.maxY - MAP_BOUNDS.minY);
-                return { x: rawX / MAP_BOUNDS.viewBoxW * 100, y: rawY / MAP_BOUNDS.viewBoxH * 100 };
+                return { x: (lon + 180) / 360 * 100, y: (90 - lat) / 180 * 100 };
             }
             function quadBezier(t, p0, p1, p2) { const mt = 1 - t; return mt * mt * p0 + 2 * mt * t * p1 + t * t * p2; }
 
